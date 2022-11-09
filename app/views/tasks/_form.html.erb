@@ -1,0 +1,10 @@
+<!-- app/views/tasks/_form.html.erb -->
+<%= form_with model: task do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br><br>
+  <%= f.label :details %>
+  <%= f.text_field :details %><br><br>
+  <%= f.label :completed %>
+  <%= f.check_box :completed %><br><br>
+  <%= f.submit %>
+<% end %>
