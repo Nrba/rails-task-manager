@@ -4,17 +4,14 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[show edit update destroy]
 
+  def new; end
+  def show; end
+  def edit; end
+
   def index
     @tasks = Task.all
+    flash.now[:notice] = "We have exactly #{@tasks.size} tasks available."
   end
-
-  def new
-    @task = Task.new
-  end
-
-  def show; end
-
-  def edit; end
 
   def create
     @task = Task.new(task_params)
